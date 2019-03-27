@@ -1,5 +1,10 @@
 #!/bin/sh
-sleep 50
+until nc -z -v -w30 $CFG_MYSQL_HOST 3306
+do
+  echo "Waiting for database connection..."
+  # wait for 5 seconds before check again
+  sleep 5
+done
 mysql -u test -ptest test_db <<MY_QUERY
 CREATE TABLE Customers (row1 INT, row2 INT);
 MY_QUERY

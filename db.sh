@@ -1,5 +1,5 @@
 #!/bin/sh
-until nc -z -v -w30 $CFG_MYSQL_HOST 3306
+until nc -z -v -w30 localhost 3306
 do
   echo "Waiting for database connection..."
   # wait for 5 seconds before check again

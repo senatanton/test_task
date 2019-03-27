@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  db:
+  db_senatskiy_ao:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -13,12 +13,12 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: test
 
-  adminer:
+  adminer_senatskiy_ao:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-  grafana:
+  grafana_senatskiy_ao:
     image: grafana/grafana:5.1.0
     restart: always
     ports:

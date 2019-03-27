@@ -1,4 +1,5 @@
 #!/bin/sh
+sleep 30
 mysql -c -u test -ptest test_db -e "CREATE TABLE Customers (row1 INT, row2 INT);"
 for step in $(seq 0 1000)
 do

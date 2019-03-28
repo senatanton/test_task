@@ -10,7 +10,7 @@ docker-compose up -d
 #проверка запущенного DB
 id_mysql=$( docker ps | grep db_senatskiy_ao | awk '{ print $1 }')
 #наполнение базы
-docker exec -i -t $id_mysql bash -c "mysql_upgrade -uroot -p123456" && docker exec -i -t $id_mysql bash -c "mysql --user=root -p123456 < /home/my2.sql"
+sleep 20 && docker exec -i -t $id_mysql bash -c "mysql_upgrade -uroot -p123456" && docker exec -i -t $id_mysql bash -c "mysql --user=root -p123456 < /home/my2.sql"
 sleep 20
 docker exec -i -t $id_mysql mysql -c -u test -ptest test_db -e "CREATE TABLE Customers (row1 INT, row2 INT);"
 for step in $(seq 0 1000)

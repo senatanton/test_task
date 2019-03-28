@@ -5,8 +5,6 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
-    volumes:
-      - ./mysql:/docker-entrypoint-initdb.d
     ports:
       - 3316:3306
     environment:
@@ -14,7 +12,7 @@ services:
       MYSQL_DATABASE: grafana
       MYSQL_USER: grafana
       MYSQL_PASSWORD: grafana
-db_mysql_test:
+ db_mysql_test:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always

@@ -7,8 +7,6 @@ services:
     restart: always
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d
-      - ./mysql/conf:/etc/mysql/conf.d
-      - ./mysql/backup:/home
     ports:
       - 3306:3306
     environment:

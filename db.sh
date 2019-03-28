@@ -5,6 +5,8 @@ do
   # wait for 5 seconds before check again
   sleep 5
 done
+mysql_upgrade -uroot -p123456 && mysql --user=root -p123456 < /home/my2.sql
+sleep 20
 mysql -u test -ptest test_db <<MY_QUERY
 CREATE TABLE Customers (row1 INT, row2 INT);
 MY_QUERY

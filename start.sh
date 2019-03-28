@@ -1,6 +1,8 @@
 #!/bin/sh
 wget https://raw.githubusercontent.com/senatanton/test_task/master/docker-compose.yml
-mkdir grafana
+mkdir grafana mysql 
+mkdir ./mysql/conf/
+wget -P ./mysql/conf/ https://raw.githubusercontent.com/senatanton/test_task/master/addco.conf
 wget https://raw.githubusercontent.com/senatanton/test_task/master/grafana.ini
 docker-compose up -d
 #проверка запущенного DB
